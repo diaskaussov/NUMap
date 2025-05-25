@@ -37,6 +37,8 @@ final class NUMapView: MKMapView {
     
     private func setMapProperties() {
         mapType = .satellite
+        showsCompass = false
+        layoutMargins.bottom = -100
         translatesAutoresizingMaskIntoConstraints = false
         region = MKCoordinateRegion(center: location, span: span)
         

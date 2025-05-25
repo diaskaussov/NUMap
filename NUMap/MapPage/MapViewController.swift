@@ -13,6 +13,8 @@ final class MapViewController: UIViewController {
         static let listImage: String = "list.bullet"
     }
     
+    private let listViewController = ListViewController()
+    private let locationSearchBar = LocationSearchBar()
     private let mapView = NUMapView()
     private let mapButton = MenuButton(imageName: Constants.mapImage)
     private let listButton = MenuButton(imageName: Constants.listImage)
@@ -29,6 +31,7 @@ final class MapViewController: UIViewController {
         super.viewDidLoad()
         addSubviews()
         setupConstraints()
+        setupListViewController()
         configure()
     }
 }
@@ -38,8 +41,9 @@ final class MapViewController: UIViewController {
 private extension MapViewController {
     private func addSubviews() {
         view.addSubview(mapView)
-        mapView.addSubview(locationButton)
-        mapView.addSubview(backgroundButtonView)
+        view.addSubview(locationSearchBar)
+        view.addSubview(locationButton)
+        view.addSubview(backgroundButtonView)
         backgroundButtonView.addSubview(mapButton)
         backgroundButtonView.addSubview(listButton)
     }
@@ -51,15 +55,20 @@ private extension MapViewController {
             mapView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             mapView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             
-            backgroundButtonView.bottomAnchor.constraint(equalTo: mapView.safeAreaLayoutGuide.bottomAnchor),
-            backgroundButtonView.centerXAnchor.constraint(equalTo: mapView.centerXAnchor),
-            backgroundButtonView.widthAnchor.constraint(equalTo: mapView.widthAnchor, multiplier: 0.5),
-            backgroundButtonView.heightAnchor.constraint(equalTo: mapView.heightAnchor, multiplier: 0.08),
+            locationSearchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: -30),
+            locationSearchBar.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.95),
+            locationSearchBar.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.06),
+            locationSearchBar.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
-            locationButton.bottomAnchor.constraint(equalTo: mapView.safeAreaLayoutGuide.bottomAnchor),
-            locationButton.trailingAnchor.constraint(equalTo: mapView.trailingAnchor, constant: -5),
-            locationButton.widthAnchor.constraint(equalTo: mapView.heightAnchor, multiplier: 0.08),
-            locationButton.heightAnchor.constraint(equalTo: mapView.heightAnchor, multiplier: 0.08),
+            backgroundButtonView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            backgroundButtonView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            backgroundButtonView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5),
+            backgroundButtonView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.08),
+            
+            locationButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            locationButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -5),
+            locationButton.widthAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.08),
+            locationButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.08),
             
             mapButton.bottomAnchor.constraint(equalTo: backgroundButtonView.bottomAnchor),
             mapButton.leadingAnchor.constraint(equalTo: backgroundButtonView.leadingAnchor),
@@ -74,8 +83,29 @@ private extension MapViewController {
     }
     
     private func configure() {
+        locationSearchBar.locationSearchBarDelegate = self
         setupButtonActions()
         updateButtonUI()
+    }
+}
+
+//MARK: - Setup List View Controller
+
+private extension MapViewController {
+    private func setupListViewController() {
+        self.addChild(listViewController)
+        view.addSubview(listViewController.view)
+        listViewController.view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            listViewController.view.topAnchor.constraint(equalTo: view.topAnchor),
+            listViewController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            listViewController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            listViewController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
+        listViewController.view.isHidden = true
+        listViewController.didMove(toParent: self)
+        view.bringSubviewToFront(backgroundButtonView)
+        view.bringSubviewToFront(locationSearchBar)
     }
 }
 
@@ -92,15 +122,10 @@ private extension MapViewController {
     private func buttonTapped(_ sender: UIButton) {
         if sender == mapButton {
             currentMode = .map
-            
+            listViewController.view.isHidden = true
         } else {
             currentMode = .list
-            let vc = ListViewController(
-                mapButton: mapButton,
-                listButton: listButton,
-                backgroundButtonView: backgroundButtonView
-            )
-            navigationController?.pushViewController(vc, animated: true)
+            listViewController.view.isHidden = false
         }
     }
     
@@ -118,5 +143,34 @@ private extension MapViewController {
     @objc
     private func locationButtonTapped(_ sender: UIButton) {
         print("Hello")
+    }
+}
+
+//MARK: - Search Bar Delegate and Logic
+
+extension MapViewController: LocationSearchBarDelegate {
+    func textFieldDidBeginEditing(textField: UITextField) {
+        print("Text started editing")
+        locationSearchBar.makeCancelButtonAppear(for: true)
+    }
+    
+    func textFieldDidChanged(textField: UITextField) {
+        print("Text is changing")
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        print("Text is done editing")
+        locationSearchBar.makeCancelButtonAppear(for: false)
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) {
+        textField.resignFirstResponder()
+    }
+    
+    func cancelButtonTapped() {
+        print("Cancel button tapped")
+        locationSearchBar.text = ""
+        locationSearchBar.resignFirstResponder()
+        locationSearchBar.makeCancelButtonAppear(for: false)
     }
 }

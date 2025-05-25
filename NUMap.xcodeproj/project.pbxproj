@@ -17,6 +17,9 @@
 		B97A74FD2DDF43B6000B8F8B /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97A74FC2DDF43B2000B8F8B /* ListViewController.swift */; };
 		B9A4D3512DC6C28E00AB48BF /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A4D3502DC6C28700AB48BF /* MenuButton.swift */; };
 		B9A4D3532DC6C8D600AB48BF /* BackgroundButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A4D3522DC6C8CE00AB48BF /* BackgroundButtonView.swift */; };
+		B9B9B5742DE2456900C5A226 /* LocationSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B9B5732DE2455D00C5A226 /* LocationSearchBar.swift */; };
+		B9B9B5772DE2610400C5A226 /* SearchCancelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B9B5762DE260FB00C5A226 /* SearchCancelButton.swift */; };
+		B9B9F9842DE0D75500E91BAD /* PrefferedPlacesButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B9F9832DE0D6C100E91BAD /* PrefferedPlacesButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		B97A74FC2DDF43B2000B8F8B /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		B9A4D3502DC6C28700AB48BF /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
 		B9A4D3522DC6C8CE00AB48BF /* BackgroundButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundButtonView.swift; sourceTree = "<group>"; };
+		B9B9B5732DE2455D00C5A226 /* LocationSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchBar.swift; sourceTree = "<group>"; };
+		B9B9B5762DE260FB00C5A226 /* SearchCancelButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCancelButton.swift; sourceTree = "<group>"; };
+		B9B9F9832DE0D6C100E91BAD /* PrefferedPlacesButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefferedPlacesButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +54,7 @@
 		B935E5F32DC6718C0046FEBC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B9B9B5752DE260F000C5A226 /* LocationSearchBar */,
 				B97A74F82DDF3867000B8F8B /* LocationButton.swift */,
 				B9A4D3522DC6C8CE00AB48BF /* BackgroundButtonView.swift */,
 				B9A4D3502DC6C28700AB48BF /* MenuButton.swift */,
@@ -98,9 +105,19 @@
 		B97A74FB2DDF43A1000B8F8B /* ListPage */ = {
 			isa = PBXGroup;
 			children = (
+				B9B9F9832DE0D6C100E91BAD /* PrefferedPlacesButton.swift */,
 				B97A74FC2DDF43B2000B8F8B /* ListViewController.swift */,
 			);
 			path = ListPage;
+			sourceTree = "<group>";
+		};
+		B9B9B5752DE260F000C5A226 /* LocationSearchBar */ = {
+			isa = PBXGroup;
+			children = (
+				B9B9B5762DE260FB00C5A226 /* SearchCancelButton.swift */,
+				B9B9B5732DE2455D00C5A226 /* LocationSearchBar.swift */,
+			);
+			path = LocationSearchBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,11 +196,14 @@
 				B935E5FF2DC6718C0046FEBC /* AppDelegate.swift in Sources */,
 				B935E6002DC6718C0046FEBC /* MapViewController.swift in Sources */,
 				B935E6012DC6718C0046FEBC /* NUMap.xcdatamodeld in Sources */,
+				B9B9B5742DE2456900C5A226 /* LocationSearchBar.swift in Sources */,
 				B97A74F92DDF3874000B8F8B /* LocationButton.swift in Sources */,
 				B97A74FD2DDF43B6000B8F8B /* ListViewController.swift in Sources */,
 				B9A4D3532DC6C8D600AB48BF /* BackgroundButtonView.swift in Sources */,
 				B9A4D3512DC6C28E00AB48BF /* MenuButton.swift in Sources */,
 				B935E6022DC6718C0046FEBC /* SceneDelegate.swift in Sources */,
+				B9B9F9842DE0D75500E91BAD /* PrefferedPlacesButton.swift in Sources */,
+				B9B9B5772DE2610400C5A226 /* SearchCancelButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
