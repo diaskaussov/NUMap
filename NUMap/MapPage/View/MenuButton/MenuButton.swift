@@ -2,19 +2,25 @@
 import UIKit
 
 final class MenuButton: UIButton {
-    
     private enum Constants {
         static let imageConfigPointSize: CGFloat = 24
+        static let cornerRadius: CGFloat = 20
         static let activeTintColor: UIColor =  .white
         static let inactiveTintColor: UIColor =  .black
-        static let cornerRadius: CGFloat = 20
+        
         static let activeBackgroundColor: UIColor = UIColor(
             red: 106.0/255.0,
             green: 95.0/255.0,
             blue: 255.0/255.0,
             alpha: 1
         )
-        static let inactiveBackgroundColor: UIColor = .systemGray4
+        
+        static let inactiveBackgroundColor: UIColor = UIColor(
+            red: 228.0/255.0,
+            green: 228.0/255.0,
+            blue: 228.0/255.0,
+            alpha: 1
+        )
     }
     
     var isActive: Bool = false {
@@ -25,27 +31,24 @@ final class MenuButton: UIButton {
     
     init(imageName: String) {
         super.init(frame: .zero)
-        setImageForButton(name: imageName)
-        setupButtonProperties()
+        configure(with: imageName)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setImageForButton(name: String) {
-        let imageConfig = UIImage.SymbolConfiguration(
+    private func configure(with name: String) {
+        let config = UIImage.SymbolConfiguration(
             pointSize: Constants.imageConfigPointSize,
             weight: .bold
         )
-        let image = UIImage(
-            systemName: name,
-            withConfiguration: imageConfig
-        )
+        let image = UIImage(systemName: name, withConfiguration: config)
         setImage(
             image ?? UIImage(),
             for: .normal
         )
+        setupButtonProperties()
     }
     
     private func setupButtonProperties() {
@@ -54,9 +57,8 @@ final class MenuButton: UIButton {
         updateAppearance(state: isActive)
     }
     
-    func updateAppearance(state: Bool) {
+    private func updateAppearance(state: Bool) {
         backgroundColor = state ? Constants.activeBackgroundColor : Constants.inactiveBackgroundColor
         tintColor = state ? Constants.activeTintColor : Constants.inactiveTintColor
     }
 }
-

@@ -14,27 +14,24 @@ final class SearchCancelButton: UIButton {
     
     init(name: String) {
         super.init(frame: .zero)
-        setImageForButton(name: name)
-        setupButtonProperties()
+        configure(with: name)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setImageForButton(name: String) {
-        let imageConfig = UIImage.SymbolConfiguration(
+    private func configure(with name: String) {
+        let config = UIImage.SymbolConfiguration(
             pointSize: Constants.imageConfigPointSize,
             weight: .bold
         )
-        let image = UIImage(
-            systemName: name,
-            withConfiguration: imageConfig
-        )
+        let image = UIImage(systemName: name, withConfiguration: config)
         setImage(
             image ?? UIImage(),
             for: .normal
         )
+        setupButtonProperties()
     }
     
     private func setupButtonProperties() {

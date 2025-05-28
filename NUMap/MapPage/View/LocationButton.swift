@@ -17,15 +17,19 @@ class LocationButton: UIButton {
     
     init() {
         super.init(frame: .zero)
-        setImageForButton()
-        setupButtonProperties()
+        configure()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setImageForButton() {
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        layer.cornerRadius = frame.width / 2
+    }
+    
+    private func configure() {
         let imageConfig = UIImage.SymbolConfiguration(
             pointSize: Constants.imageConfigPointSize,
             weight: .bold
@@ -38,6 +42,7 @@ class LocationButton: UIButton {
             image ?? UIImage(),
             for: .normal
         )
+        setupButtonProperties()
     }
     
     private func setupButtonProperties() {
@@ -45,10 +50,5 @@ class LocationButton: UIButton {
         backgroundColor = Constants.backgroundColor
         clipsToBounds = true
         translatesAutoresizingMaskIntoConstraints = false
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        layer.cornerRadius = frame.width / 2
     }
 }

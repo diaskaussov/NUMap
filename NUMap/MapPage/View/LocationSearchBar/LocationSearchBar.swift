@@ -28,6 +28,7 @@ final class LocationSearchBar: UITextField {
             blue: 228.0/255.0,
             alpha: 1.0
         )
+        static let font: UIFont = UIFont.systemFont(ofSize: 17, weight: .light)
         static let insetX: CGFloat = 15
         static let insetY: CGFloat = 0
         static let searchButtonName: String = "magnifyingglass"
@@ -42,8 +43,9 @@ final class LocationSearchBar: UITextField {
     
     init() {
         super.init(frame: .zero)
+        setFontProperties()
         setupSearchBarProperties()
-        addSubviews()
+        setupSubviews()
         setupSearchBarConstraints()
         addFunctionality()
     }
@@ -68,9 +70,20 @@ extension LocationSearchBar {
 //MARK: - Setup Search and Cancel Buttons
 
 private extension LocationSearchBar {
+    private func setFontProperties() {
+        font = Constants.font
+        adjustsFontForContentSizeCategory = true
+        attributedPlaceholder = NSAttributedString(
+            string: "What do you want to visit?",
+            attributes: [
+                .font: Constants.font,
+                .foregroundColor: Constants.textColor
+            ]
+        )
+    }
+    
     private func setupSearchBarProperties() {
         tintColor = Constants.textColor
-        placeholder = "What do you want to visit?"
         backgroundColor = .clear
         returnKeyType = .search
         backgroundColor = Constants.backgroundColor
@@ -81,7 +94,7 @@ private extension LocationSearchBar {
         translatesAutoresizingMaskIntoConstraints = false
     }
     
-    private func addSubviews() {
+    private func setupSubviews() {
         self.addSubview(buttonContainer)
         buttonContainer.addSubview(cancelButton)
         buttonContainer.addSubview(searchButton)

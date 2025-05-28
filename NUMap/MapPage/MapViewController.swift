@@ -13,13 +13,17 @@ final class MapViewController: UIViewController {
         static let listImage: String = "list.bullet"
     }
     
-    private let listViewController = ListViewController()
     private let locationSearchBar = LocationSearchBar()
     private let mapView = NUMapView()
+    private let locationButton = LocationButton()
+    
     private let mapButton = MenuButton(imageName: Constants.mapImage)
     private let listButton = MenuButton(imageName: Constants.listImage)
-    private let backgroundButtonView = BackgroundButtonView()
-    private let locationButton = LocationButton()
+    private let backgroundButtonView = BackgroundMenuButtonView()
+    
+    private lazy var listViewController = ListViewController(
+        searchBarHeight: locationSearchBar.frame.height + 30
+    )
     
     private var currentMode: ViewMode = .map {
         didSet {
@@ -29,17 +33,17 @@ final class MapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addSubviews()
+        setupSubviews()
         setupConstraints()
         setupListViewController()
         configure()
     }
 }
 
-//MARK: - Main ViewController Setup
+//MARK: - Map ViewController Setup
 
 private extension MapViewController {
-    private func addSubviews() {
+    private func setupSubviews() {
         view.addSubview(mapView)
         view.addSubview(locationSearchBar)
         view.addSubview(locationButton)
@@ -96,14 +100,17 @@ private extension MapViewController {
         self.addChild(listViewController)
         view.addSubview(listViewController.view)
         listViewController.view.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activate([
             listViewController.view.topAnchor.constraint(equalTo: view.topAnchor),
             listViewController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             listViewController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             listViewController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
+        
         listViewController.view.isHidden = true
         listViewController.didMove(toParent: self)
+        
         view.bringSubviewToFront(backgroundButtonView)
         view.bringSubviewToFront(locationSearchBar)
     }

@@ -1,8 +1,7 @@
 
 import UIKit
 
-final class BackgroundButtonView: UIView {
-    
+final class BackgroundMenuButtonView: UIView {
     private enum Constants {
         static let backgroundColor: UIColor = .systemGray4
         static let cornerRadius: CGFloat = 20
@@ -22,6 +21,5 @@ final class BackgroundButtonView: UIView {
         layer.cornerRadius = Constants.cornerRadius
         isUserInteractionEnabled = true
         translatesAutoresizingMaskIntoConstraints = false
-        
     }
 }

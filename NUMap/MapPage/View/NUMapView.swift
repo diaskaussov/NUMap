@@ -4,14 +4,14 @@ import MapKit
 
 final class NUMapView: MKMapView {
     private enum Constants {
-        static let NULatitude: CLLocationDegrees = 51.090163
-        static let NULongtitude: CLLocationDegrees = 71.400055
+        static let NULatitude: CLLocationDegrees = 51.090398
+        static let NULongtitude: CLLocationDegrees = 71.398578
         static let NULatitudeDelta: CLLocationDegrees = 0.05
         static let NULongtitudeDelta: CLLocationDegrees = 0.05
-        static let cameraFromDistance: CLLocationDistance = 1000
+        static let cameraFromDistance: CLLocationDistance = 2000
         static let cameraPitch: CGFloat = 60
         static let cameraAngle: CGFloat = 283
-        
+        static let bottomMargin: CGFloat = -100
     }
     
     let location = CLLocationCoordinate2D(
@@ -22,9 +22,6 @@ final class NUMapView: MKMapView {
         latitudeDelta: Constants.NULatitudeDelta,
         longitudeDelta: Constants.NULongtitudeDelta
     )
-//    let maxAllowedDistance: CLLocationDistance = 2000
-//    let minZoomLevel: CLLocationDegrees = 0.005
-//    let maxZoomLevel: CLLocationDegrees = 0.05
     
     init() {
         super.init(frame: .zero)
@@ -38,7 +35,7 @@ final class NUMapView: MKMapView {
     private func setMapProperties() {
         mapType = .satellite
         showsCompass = false
-        layoutMargins.bottom = -100
+        layoutMargins.bottom = Constants.bottomMargin
         translatesAutoresizingMaskIntoConstraints = false
         region = MKCoordinateRegion(center: location, span: span)
         

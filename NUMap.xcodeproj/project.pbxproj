@@ -13,13 +13,19 @@
 		B935E6002DC6718C0046FEBC /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B935E5F72DC6718C0046FEBC /* MapViewController.swift */; };
 		B935E6012DC6718C0046FEBC /* NUMap.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B935E5F82DC6718C0046FEBC /* NUMap.xcdatamodeld */; };
 		B935E6022DC6718C0046FEBC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B935E5F92DC6718C0046FEBC /* SceneDelegate.swift */; };
+		B94D0E442DE4E72D0006323C /* PrefferedPlacesButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94D0E432DE4E7250006323C /* PrefferedPlacesButtonView.swift */; };
+		B94D0E4A2DE4EE170006323C /* PlacesBlocksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94D0E492DE4EE0A0006323C /* PlacesBlocksModel.swift */; };
+		B94D0E4C2DE5EC520006323C /* PrefferedPlacesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94D0E4B2DE5EC3E0006323C /* PrefferedPlacesTableView.swift */; };
 		B97A74F92DDF3874000B8F8B /* LocationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97A74F82DDF3867000B8F8B /* LocationButton.swift */; };
 		B97A74FD2DDF43B6000B8F8B /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97A74FC2DDF43B2000B8F8B /* ListViewController.swift */; };
 		B9A4D3512DC6C28E00AB48BF /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A4D3502DC6C28700AB48BF /* MenuButton.swift */; };
-		B9A4D3532DC6C8D600AB48BF /* BackgroundButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A4D3522DC6C8CE00AB48BF /* BackgroundButtonView.swift */; };
+		B9A4D3532DC6C8D600AB48BF /* BackgroundMenuButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A4D3522DC6C8CE00AB48BF /* BackgroundMenuButtonView.swift */; };
 		B9B9B5742DE2456900C5A226 /* LocationSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B9B5732DE2455D00C5A226 /* LocationSearchBar.swift */; };
 		B9B9B5772DE2610400C5A226 /* SearchCancelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B9B5762DE260FB00C5A226 /* SearchCancelButton.swift */; };
 		B9B9F9842DE0D75500E91BAD /* PrefferedPlacesButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B9F9832DE0D6C100E91BAD /* PrefferedPlacesButton.swift */; };
+		B9F4C9F62DE5EF9000E99EC8 /* ListPagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F4C9F52DE5EF7E00E99EC8 /* ListPagePresenter.swift */; };
+		B9F4C9F92DE636A700E99EC8 /* SectionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F4C9F82DE6369A00E99EC8 /* SectionButton.swift */; };
+		B9F4C9FB2DE6518A00E99EC8 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F4C9FA2DE6517A00E99EC8 /* CustomTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,14 +36,20 @@
 		B935E5F72DC6718C0046FEBC /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		B935E5F92DC6718C0046FEBC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B935E5FB2DC6718C0046FEBC /* NUMap.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NUMap.xcdatamodel; sourceTree = "<group>"; };
+		B94D0E432DE4E7250006323C /* PrefferedPlacesButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefferedPlacesButtonView.swift; sourceTree = "<group>"; };
+		B94D0E492DE4EE0A0006323C /* PlacesBlocksModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesBlocksModel.swift; sourceTree = "<group>"; };
+		B94D0E4B2DE5EC3E0006323C /* PrefferedPlacesTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefferedPlacesTableView.swift; sourceTree = "<group>"; };
 		B956C7E92D6A463400FF0D3A /* NUMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NUMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B97A74F82DDF3867000B8F8B /* LocationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationButton.swift; sourceTree = "<group>"; };
 		B97A74FC2DDF43B2000B8F8B /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		B9A4D3502DC6C28700AB48BF /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
-		B9A4D3522DC6C8CE00AB48BF /* BackgroundButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundButtonView.swift; sourceTree = "<group>"; };
+		B9A4D3522DC6C8CE00AB48BF /* BackgroundMenuButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundMenuButtonView.swift; sourceTree = "<group>"; };
 		B9B9B5732DE2455D00C5A226 /* LocationSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchBar.swift; sourceTree = "<group>"; };
 		B9B9B5762DE260FB00C5A226 /* SearchCancelButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCancelButton.swift; sourceTree = "<group>"; };
 		B9B9F9832DE0D6C100E91BAD /* PrefferedPlacesButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefferedPlacesButton.swift; sourceTree = "<group>"; };
+		B9F4C9F52DE5EF7E00E99EC8 /* ListPagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPagePresenter.swift; sourceTree = "<group>"; };
+		B9F4C9F82DE6369A00E99EC8 /* SectionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionButton.swift; sourceTree = "<group>"; };
+		B9F4C9FA2DE6517A00E99EC8 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,10 +66,9 @@
 		B935E5F32DC6718C0046FEBC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B94D0E412DE4E5170006323C /* MenuButton */,
 				B9B9B5752DE260F000C5A226 /* LocationSearchBar */,
 				B97A74F82DDF3867000B8F8B /* LocationButton.swift */,
-				B9A4D3522DC6C8CE00AB48BF /* BackgroundButtonView.swift */,
-				B9A4D3502DC6C28700AB48BF /* MenuButton.swift */,
 				B935E5F22DC6718C0046FEBC /* NUMapView.swift */,
 			);
 			path = View;
@@ -75,6 +86,41 @@
 				B935E5F92DC6718C0046FEBC /* SceneDelegate.swift */,
 			);
 			path = NUMap;
+			sourceTree = "<group>";
+		};
+		B94D0E412DE4E5170006323C /* MenuButton */ = {
+			isa = PBXGroup;
+			children = (
+				B9A4D3522DC6C8CE00AB48BF /* BackgroundMenuButtonView.swift */,
+				B9A4D3502DC6C28700AB48BF /* MenuButton.swift */,
+			);
+			path = MenuButton;
+			sourceTree = "<group>";
+		};
+		B94D0E422DE4E70D0006323C /* PrefferedPlacesButton */ = {
+			isa = PBXGroup;
+			children = (
+				B94D0E432DE4E7250006323C /* PrefferedPlacesButtonView.swift */,
+				B9B9F9832DE0D6C100E91BAD /* PrefferedPlacesButton.swift */,
+			);
+			path = PrefferedPlacesButton;
+			sourceTree = "<group>";
+		};
+		B94D0E472DE4EDF80006323C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B9F4C9F72DE6368900E99EC8 /* PrefferedPlacesTableView */,
+				B94D0E422DE4E70D0006323C /* PrefferedPlacesButton */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B94D0E482DE4EE010006323C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B94D0E492DE4EE0A0006323C /* PlacesBlocksModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		B956C7E02D6A463400FF0D3A = {
@@ -96,8 +142,8 @@
 		B97A74FA2DDF41CB000B8F8B /* MapPage */ = {
 			isa = PBXGroup;
 			children = (
-				B935E5F32DC6718C0046FEBC /* View */,
 				B935E5F72DC6718C0046FEBC /* MapViewController.swift */,
+				B935E5F32DC6718C0046FEBC /* View */,
 			);
 			path = MapPage;
 			sourceTree = "<group>";
@@ -105,8 +151,10 @@
 		B97A74FB2DDF43A1000B8F8B /* ListPage */ = {
 			isa = PBXGroup;
 			children = (
-				B9B9F9832DE0D6C100E91BAD /* PrefferedPlacesButton.swift */,
 				B97A74FC2DDF43B2000B8F8B /* ListViewController.swift */,
+				B9F4C9F52DE5EF7E00E99EC8 /* ListPagePresenter.swift */,
+				B94D0E482DE4EE010006323C /* Model */,
+				B94D0E472DE4EDF80006323C /* View */,
 			);
 			path = ListPage;
 			sourceTree = "<group>";
@@ -118,6 +166,16 @@
 				B9B9B5732DE2455D00C5A226 /* LocationSearchBar.swift */,
 			);
 			path = LocationSearchBar;
+			sourceTree = "<group>";
+		};
+		B9F4C9F72DE6368900E99EC8 /* PrefferedPlacesTableView */ = {
+			isa = PBXGroup;
+			children = (
+				B9F4C9FA2DE6517A00E99EC8 /* CustomTableViewCell.swift */,
+				B9F4C9F82DE6369A00E99EC8 /* SectionButton.swift */,
+				B94D0E4B2DE5EC3E0006323C /* PrefferedPlacesTableView.swift */,
+			);
+			path = PrefferedPlacesTableView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,18 +250,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9F4C9FB2DE6518A00E99EC8 /* CustomTableViewCell.swift in Sources */,
 				B935E5FE2DC6718C0046FEBC /* NUMapView.swift in Sources */,
 				B935E5FF2DC6718C0046FEBC /* AppDelegate.swift in Sources */,
 				B935E6002DC6718C0046FEBC /* MapViewController.swift in Sources */,
+				B9F4C9F62DE5EF9000E99EC8 /* ListPagePresenter.swift in Sources */,
 				B935E6012DC6718C0046FEBC /* NUMap.xcdatamodeld in Sources */,
 				B9B9B5742DE2456900C5A226 /* LocationSearchBar.swift in Sources */,
+				B94D0E4A2DE4EE170006323C /* PlacesBlocksModel.swift in Sources */,
 				B97A74F92DDF3874000B8F8B /* LocationButton.swift in Sources */,
 				B97A74FD2DDF43B6000B8F8B /* ListViewController.swift in Sources */,
-				B9A4D3532DC6C8D600AB48BF /* BackgroundButtonView.swift in Sources */,
+				B9A4D3532DC6C8D600AB48BF /* BackgroundMenuButtonView.swift in Sources */,
 				B9A4D3512DC6C28E00AB48BF /* MenuButton.swift in Sources */,
+				B94D0E442DE4E72D0006323C /* PrefferedPlacesButtonView.swift in Sources */,
 				B935E6022DC6718C0046FEBC /* SceneDelegate.swift in Sources */,
 				B9B9F9842DE0D75500E91BAD /* PrefferedPlacesButton.swift in Sources */,
+				B9F4C9F92DE636A700E99EC8 /* SectionButton.swift in Sources */,
 				B9B9B5772DE2610400C5A226 /* SearchCancelButton.swift in Sources */,
+				B94D0E4C2DE5EC520006323C /* PrefferedPlacesTableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
